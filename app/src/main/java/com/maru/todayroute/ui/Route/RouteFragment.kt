@@ -90,7 +90,7 @@ class RouteFragment : BaseFragment<FragmentRouteBinding>(R.layout.fragment_route
             binding.tvLocation.text = route.location        // 위치
 
             //binding.ivRoute = route.지도                   // 루트
-            binding.ivRoute.setImageResource(R.drawable.route_image)        // 실제로는 mapView
+            //binding.ivRoute.setImageResource(R.drawable.route_image)        // 실제로는 mapView
 
             showImage(imageList, route.id)                  // 등록한 사진 리사이클러뷰 나열
 

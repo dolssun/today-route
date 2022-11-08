@@ -20,11 +20,18 @@ class ImageAdapter(val imageList: ArrayList<Images>, val binding: FragmentRouteB
             itemView.setOnClickListener {
                 val curPos: Int = adapterPosition
                 val image: Images = imageList.get(curPos)
-                println("루트아이디 : ${image.routeId}, 이미지번호 : ${image.id}\n")
+                //println("adapterPosition : ${adapterPosition}")
+                //println("루트아이디 : ${image.routeId}, 이미지번호 : ${image.id}\n")
 
                 // 선택한 이미지 띄우기
-                binding.ivClickRouteImage.setImageResource(image.url)
-                binding.ivClickRouteImage.visibility = View.VISIBLE
+                // 루트(이미지 id==-1) 선택한 경우에는 mapView 바인딩 해주기..
+                if(adapterPosition==0){
+                    binding.ivClickRouteImage.visibility = View.INVISIBLE
+                }else{
+                    binding.ivClickRouteImage.setImageResource(image.url)
+                    binding.ivClickRouteImage.visibility = View.VISIBLE
+                }
+
 
             }
         }

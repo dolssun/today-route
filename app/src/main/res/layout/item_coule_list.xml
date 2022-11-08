@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activityViewModel"
+            type="com.maru.todayroute.ui.MainViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.maru.todayroute.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#0D959595">
+
+        <ImageView
+            android:id="@+id/iv_profile_iamge"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/brown" />
+
+        <TextView
+            android:id="@+id/tv_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="7dp"
+            android:text="@{activityViewModel.coupleInfo.girl.nickname}"
+            android:textColor="#593434"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_profile_birth"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile_iamge"
+            app:layout_constraintTop_toTopOf="@+id/iv_profile_iamge"
+            tools:text="철수" />
+
+        <TextView
+            android:id="@+id/tv_profile_birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{activityViewModel.coupleInfo.girl.birthday}"
+            android:textColor="#593434"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_profile_iamge"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile_iamge"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_name"
+            tools:text="1998.09.03" />
+
+        <TextView
+            android:id="@+id/tv_profile_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="여"
+            android:textColor="#9C27B0"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_profile_birth"
+            app:layout_constraintStart_toEndOf="@+id/tv_profile_birth"
+            app:layout_constraintTop_toTopOf="@+id/tv_profile_birth" />
+
+        <TextView
+            android:id="@+id/tv_profile_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="편집"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_profile_birth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_profile_birth" />
+
+
+        <View
+            android:id="@+id/v_bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#28000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+             />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
